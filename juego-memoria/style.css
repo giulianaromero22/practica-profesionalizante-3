@@ -1,0 +1,133 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  min-height: 100vh;
+}
+
+h1 {
+  margin-top: 20px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 36px;
+  letter-spacing: 2px;
+
+  /* degradado en el texto */
+  background: linear-gradient(90deg, #00ffcc, #ffffff, #00ffcc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* brillo */
+  text-shadow: 0 0 10px rgba(0,255,204,0.7);
+
+  animation: brillo 2s infinite alternate;
+}
+
+.config, .respuesta {
+  margin: 20px;
+}
+#numero {
+  font-size: 40px;
+  margin: 40px;
+  height: 100px;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+
+  color: #00ffcc; /* actualmente solo color */
+  text-shadow: 0 0 10px rgba(0,255,204,0.7);
+}
+
+input, button {
+  padding: 10px;
+  font-size: 16px;
+  margin: 5px;
+}
+input {
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+button {
+  border: none;
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, #b656b9, #230383);
+  color: white;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  box-shadow: 0 5px 0 #d1bad2;
+}
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 #cc6200;
+}
+button:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #cc6200;
+}
+
+#resultado {
+  font-size: 20px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.correcto {
+  color: rgb(188, 210, 188);
+}
+
+.incorrecto {
+  color: rgb(66, 11, 11);
+}
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-10px); }
+  40% { transform: translateX(10px); }
+  60% { transform: translateX(-10px); }
+  80% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.4s;
+}
+@keyframes caer {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(500px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  top: 0;
+  animation: caer 1s linear forwards;
+}
+
+.config, .respuesta {
+  margin: 20px auto;
+  padding: 20px;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+@keyframes brillo {
+  from {
+    text-shadow: 0 0 5px rgba(0,255,204,0.5);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(0,255,204,1);
+  }
+}
